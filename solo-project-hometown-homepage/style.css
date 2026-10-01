@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+    color: #DD4B1A;
+    text-shadow: 0 0 1px grey;
+}
+
+/* Container div */
+.container{
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Hero section */
+.hero {
+    background: url("assets/hero.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 45vh;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    align-content: center;
+}
+
+.hero h1 {
+    background-color: #F56416;
+    font-size: 20px;
+}
+
+.hero h2 {
+    font-size: 15px;
+    background-color: #DD4B1A;    
+}
+
+.hero h1, .hero h2 {
+    width: fit-content;
+    margin: 15px auto;
+    padding: 10px;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 7px;
+}
+
+
+/* Activities */
+.activities-container {
+    background: linear-gradient(#E28413, #FFD5C2);
+
+}
+
+.activities-container h3 {
+    padding: 20px;
+    font-size: 17px;
+}
+
+.activities {
+    display: flex;
+    justify-content: space-around;
+}
+
+.activity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.activity img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+.activity h5 {
+    margin-bottom: 25px;
+}
+
+.activity p {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+/* Guide */
+.guide-section {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    background-color:  rgba(245, 100, 22, 0.8);
+    margin: 45px auto;
+    width: 400px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    border-bottom: 5px solid #DD4B1A;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.guide-section img {
+    width: 160px;
+    border-radius: 6px;
+  
+}
+
+.guide-section div h3, div p, div h4 {
+    padding: 10px;
+    
+}
+
+@media screen and (max-width: 576px) {
+    .hero h1 {
+        scale: 0.9;
+    }
+
+    .hero h2 {
+        scale: 0.8;
+    }
+
+    .activities {
+        display: block;
+    }
+
+    .guide-section{
+        margin: 20px auto;
+        scale: 0.8;
+    }
+}
