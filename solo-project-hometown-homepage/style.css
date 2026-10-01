@@ -10,7 +10,7 @@ body {
     text-align: center;
     padding: 10px;
     color: #DD4B1A;
-    text-shadow: 0 0 1px grey;
+    text-shadow: 0 0 0.6px grey;
 }
 
 /* Container div */
@@ -74,8 +74,8 @@ body {
 }
 
 .activity img {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
     border-radius: 50%;
     margin-bottom: 25px;
 }
@@ -107,7 +107,8 @@ body {
 }
 
 .guide-section img {
-    width: 160px;
+    width: 100%;
+    height: 150px;
     border-radius: 6px;
   
 }
@@ -131,7 +132,14 @@ body {
     }
 
     .guide-section{
+        display: flex;
+        flex-direction: column-reverse;
         margin: 20px auto;
-        scale: 0.8;
+        width: 200px;
+    }
+
+    .guide-section img {
+        width: 100%;
+        height: 160px;
     }
 }
