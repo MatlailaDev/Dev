@@ -21,7 +21,7 @@ body {
 
 /* Hero section */
 .hero {
-    background: url("assets/hero.gif");
+    background: url("assets/hero.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 45vh;
