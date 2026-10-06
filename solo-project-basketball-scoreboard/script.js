@@ -1,5 +1,6 @@
 let homeTeamDisplay = document.getElementById("homeTeamDisplay")
 let awayTeamDisplay = document.getElementById("awayTeamDisplay")
+let timer = 
 
 let addOneHomeBtn = document.getElementById("add1home")
 let addTwoHomeBtn = document.getElementById("add2home")
@@ -69,3 +70,5 @@ function endGame(){
     homeTeamDisplay.textContent = scoreHome
     awayTeamDisplay.textContent = scoreAway
 }
+
+// Timer

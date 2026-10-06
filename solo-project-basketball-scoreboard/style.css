@@ -16,15 +16,28 @@ body {
     /* border: 2px dotted red; */
 }
 
+#scoreboard-container{
+    height: 450px;
+    border-radius: 8px;
+    background-color: #00072D;
+    position: relative; 
+}
+
+#timer{
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+    font-size: larger;
+    border: 1px dotted red;
+}
+
 #scoreboard {
     display: flex;
     justify-content: space-around;
     gap: 5px;
     padding: 5px;
-    height: 450px;
-    border-radius: 8px;
-    background-color: #00072D; 
-    position: relative;
     /* border: 1px solid blue; */
 }
 
