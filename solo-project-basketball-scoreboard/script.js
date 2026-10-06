@@ -60,18 +60,6 @@ function addThreeAway(){
     awayTeamDisplay.textContent = scoreAway
 }
 
-// End button
-
-endBtn.addEventListener("click", endGame)
-
-function endGame(){
-    scoreHome = 0
-    scoreAway = 0
-
-    homeTeamDisplay.textContent = scoreHome
-    awayTeamDisplay.textContent = scoreAway
-}
-
 // Timer
 let timeRemaining = 2880
 let timeInterval = null
@@ -102,3 +90,24 @@ function startGame(){
         }
     }, 1000)
 }
+
+// End button
+
+endBtn.addEventListener("click", endGame)
+
+function stopTimer(){
+    clearInterval(timeInterval)
+    
+    timeInterval = null
+}
+
+function endGame(){
+    scoreHome = 0
+    scoreAway = 0
+
+    homeTeamDisplay.textContent = scoreHome
+    awayTeamDisplay.textContent = scoreAway
+    
+    stopTimer()
+}
+
