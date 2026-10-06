@@ -1,5 +1,5 @@
-let homeTeamDisplay = document.getElementById("hometeam")
-let awayTeamDisplay = document.getElementById("awayteam")
+let homeTeamDisplay = document.getElementById("homeTeamDisplay")
+let awayTeamDisplay = document.getElementById("awayTeamDisplay")
 
 let addOneHomeBtn = document.getElementById("add1home")
 let addTwoHomeBtn = document.getElementById("add2home")
@@ -8,6 +8,8 @@ let addThreeHomeBtn = document.getElementById("add3home")
 let addOneAwayBtn = document.getElementById("add1away")
 let addTwoAwayBtn = document.getElementById("add2away")
 let addThreeAwayBtn = document.getElementById("add3away")
+
+let endBtn = document.getElementById("end-game")
 
 
 // Home team logic
@@ -53,5 +55,17 @@ function addTwoAway(){
 
 function addThreeAway(){
     scoreAway += 3
+    awayTeamDisplay.textContent = scoreAway
+}
+
+// End button
+
+endBtn.addEventListener("click", endGame)
+
+function endGame(){
+    scoreHome = 0
+    scoreAway = 0
+
+    homeTeamDisplay.textContent = scoreHome
     awayTeamDisplay.textContent = scoreAway
 }

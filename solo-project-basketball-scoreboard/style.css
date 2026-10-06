@@ -49,8 +49,9 @@ span {
     width: 200px;
     height: 210px; 
     border-radius: 6px;
-    font-size: 8em;
+    font-size: 5em;
     background-color: #001C55;
+    color: #FEFEFE;
     /* border: 1px solid red; */
 }
 
