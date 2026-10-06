@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basketball Scoreboard</title>
+    <script src="https://kit.fontawesome.com/75eafd7956.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="Scoreboard">
+    <div id="scoreboard">
         <span>
-            <div id="hometeam"></div>
+            <div id="hometeam"><img src="./assets/kaizer-chiefs.svg" alt="kaizer chiefs logo">0</div>
             <div class="btn-container">
-                <button id=""></button>
-                <button id=""></button>
-                <button id=""></button>
+                <button id="add1home">+1</button>
+                <button id="add2home">+2</button>
+                <button id="add3home">+3</button>
             </div>
         </span>
         <span>
-            <div id="awayteam"></div>
+            <div id="awayteam"><img src="./assets/chelsea.svg" alt="">0</div>
             <div class="btn-container">
-                <button id=""></button>
-                <button id=""></button>
-                <button id=""></button>
+                <button id="add1away">+1</button>
+                <button id="add2away">+2</button>
+                <button id="add3away">+3</button>
             </div>
+        </span>
+        <span id="game-btns">
+            <button id="start-game">START</button>
+            <button id="end-game">END</button>
         </span>
     </div>
 

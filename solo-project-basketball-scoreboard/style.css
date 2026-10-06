@@ -4,6 +4,114 @@
     box-sizing: border-box;
 }
 
-body {
-    padding: 1px dotted red;
+@font-face {
+    font-family: "technology";
+    src: url("./assets/technology/Technology-Bold.ttf");
 }
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 10% 5%;
+    padding: 4px;
+    /* border: 2px dotted red; */
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    padding: 5px;
+    height: 450px;
+    border-radius: 8px;
+    background-color: #00072D; 
+    position: relative;
+    /* border: 1px solid blue; */
+}
+
+span {
+    width: 100%;
+    /* border: 1px dashed black; */
+}
+
+#hometeam, #awayteam, .btn-container {
+    display: block;
+    text-align: center;
+    align-content: center;
+    margin: 35px auto;
+}
+
+#hometeam, #awayteam {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "technology";
+    width: 200px;
+    height: 210px; 
+    border-radius: 6px;
+    font-size: 8em;
+    background-color: #001C55;
+    /* border: 1px solid red; */
+}
+
+#hometeam > img, #awayteam img {
+    /* border: 1px solid white; */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+/* score buttons */
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    height: fit-content;
+    padding: 10px;
+    margin: 0 auto;
+    /* border: 1px dashed blue; */
+}
+
+button {
+    font-family: "Space Grotesk", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 45px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.88em;
+    /* border: 1px dotted red; */
+}
+
+.btn-container button:hover {
+    scale: 1.1;
+    background-color: #03440C;
+    color: #FEFEFE;
+}
+
+/* start/end game buttoms */
+#game-btns {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    bottom: 0;
+    position: absolute;
+}
+
+#start-game, #end-game {
+    width: 100px;
+    margin: 0 10px;
+}
+
+#end-game {
+    background-color: #880808;
+}
+
+#end-game:hover {
+    color: #FEFEFE;
+}
+
+
