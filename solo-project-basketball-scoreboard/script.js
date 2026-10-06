@@ -1,6 +1,6 @@
 let homeTeamDisplay = document.getElementById("homeTeamDisplay")
 let awayTeamDisplay = document.getElementById("awayTeamDisplay")
-let timer = 
+let timer = document.getElementById("timer")
 
 let addOneHomeBtn = document.getElementById("add1home")
 let addTwoHomeBtn = document.getElementById("add2home")
@@ -10,6 +10,7 @@ let addOneAwayBtn = document.getElementById("add1away")
 let addTwoAwayBtn = document.getElementById("add2away")
 let addThreeAwayBtn = document.getElementById("add3away")
 
+let startbtn = document.getElementById("start-game")
 let endBtn = document.getElementById("end-game")
 
 
@@ -72,3 +73,32 @@ function endGame(){
 }
 
 // Timer
+let timeRemaining = 2880
+let timeInterval = null
+
+startbtn.addEventListener("click", startGame)
+
+function updateDisplay(){
+    const minutes = Math.floor(timeRemaining / 60)
+    const seconds = timeRemaining % 60
+
+    const formattedMinutes = String(minutes).padStart(2, '0')
+    const formattedseconds = String(seconds).padStart(2, '0')
+
+    timer.textContent = `${formattedMinutes}:${formattedseconds}`
+}
+
+function startGame(){
+    if(timeInterval !== null) return
+
+    timeInterval = setInterval(() => {
+        if(timeRemaining > 0) {
+            timeRemaining--
+            updateDisplay()
+        } else {
+            clearInterval(timeInterval)
+            timeInterval = null
+            alert("Full Time")
+        }
+    }, 1000)
+}

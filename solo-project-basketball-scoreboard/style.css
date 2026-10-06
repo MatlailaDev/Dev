@@ -17,20 +17,24 @@ body {
 }
 
 #scoreboard-container{
-    height: 450px;
+    height: 500px;
     border-radius: 8px;
     background-color: #00072D;
     position: relative; 
 }
 
 #timer{
-    width: 100%;
+    width: fit-content;
     height: fit-content;
-    padding: 5px;
+    padding: 15px;
     align-items: center;
     text-align: center;
+    margin: auto;
     font-size: larger;
-    border: 1px dotted red;
+    color: #FEFEFE;
+    background-color: #001C55;
+    border-radius: 7px;
+    /* border: 1px dotted red; */
 }
 
 #scoreboard {
