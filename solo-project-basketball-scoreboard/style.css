@@ -20,17 +20,17 @@ body {
     height: 500px;
     border-radius: 8px;
     background-color: #00072D;
-    position: relative; 
+    position: relative;
+    padding: 5px;
 }
 
 #timer{
     width: fit-content;
-    height: fit-content;
     padding: 15px;
     align-items: center;
     text-align: center;
     margin: auto;
-    font-size: larger;
+    font-size: 15px;
     color: #FEFEFE;
     background-color: #001C55;
     border-radius: 7px;

@@ -11,6 +11,7 @@ let addTwoAwayBtn = document.getElementById("add2away")
 let addThreeAwayBtn = document.getElementById("add3away")
 
 let startbtn = document.getElementById("start-game")
+let timeoutBtn = document.getElementById("timeout")
 let endBtn = document.getElementById("end-game")
 
 
@@ -63,51 +64,98 @@ function addThreeAway(){
 // Timer
 let timeRemaining = 2880
 let timeInterval = null
+let timeoutTime = 75
+let isTimeOutActive = false;
+
 
 startbtn.addEventListener("click", startGame)
+timeoutBtn.addEventListener("click", timeout)
+endBtn.addEventListener("click", endGame)
 
-function updateDisplay(){
-    const minutes = Math.floor(timeRemaining / 60)
-    const seconds = timeRemaining % 60
 
+// helper to format any amount of seconds into MM:SS
+function formatTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds/60)
+    const seconds = totalSeconds % 60
     const formattedMinutes = String(minutes).padStart(2, '0')
-    const formattedseconds = String(seconds).padStart(2, '0')
-
-    timer.textContent = `${formattedMinutes}:${formattedseconds}`
+    const formattedSeconds = String(seconds).padStart(2, '0')
+    
+    return `${formattedMinutes}:${formattedSeconds}`
 }
 
-function startGame(){
+
+function updateDisplay() {
+    if(isTimeOutActive) {
+        // Display the timeout countdown 
+        timer.textContent = `TIMEOUT: ${formatTime(timeoutTime)}`
+    } else {
+        // Display regular game clock
+        timer.textContent = formatTime(timeRemaining)
+    }
+}
+
+function startGame() {
     if(timeInterval !== null) return
 
     timeInterval = setInterval(() => {
-        if(timeRemaining > 0) {
-            timeRemaining--
-            updateDisplay()
+        if(isTimeOutActive) {
+            // TIMEOUT ACTIVE
+            if(tiomeoutTime > 0) {
+                timeoutTime--
+                updateDisplay()
+            } else {
+                // Timeout ends and the game resumes on the nect time tick
+                isTimeOutActive = false
+                // Reset timeout for the next timeout
+                timeoutTime = 75
+                updateDisplay()
+                timer.textContent = `TIMEOUT OVER`
+            }
         } else {
-            clearInterval(timeInterval)
-            timeInterval = null
-            alert("Full Time")
+            //Normal game mode timer
+            if(timeRemaining > 0) {
+                timeRemaining--
+                updateDisplay()
+            } else {
+                clearInterval(timeInterval)
+                timeInterval = null
+                timer.textContent = `FULL TIME`
+            }
         }
     }, 1000)
 }
 
-// End button
+function timeout() {
+    // Only allow timeout if the timer is running
+    if (timeInterval === null) {
+        alert("Press Start")
+        return
+    }
+    // Prevent overriding an already running timeout
+    if(isTimeOutActive) return
 
-endBtn.addEventListener("click", endGame)
+    isTimeOutActive = true
+    updateDisplay()
+}
 
-function stopTimer(){
+// End button logic
+function stopTimer() {
     clearInterval(timeInterval)
-    
     timeInterval = null
 }
 
-function endGame(){
+function endGame() {
     scoreHome = 0
     scoreAway = 0
 
     homeTeamDisplay.textContent = scoreHome
     awayTeamDisplay.textContent = scoreAway
-    
-    stopTimer()
-}
 
+    // Reset timer & timeout states completely
+    timeRemaining = 2880
+    timeoutTime -75
+    isTimeOutActive = false
+
+    stopTimer()
+    updateDisplay()
+}
