@@ -17,11 +17,12 @@ body {
 }
 
 #scoreboard-container{
-    height: 500px;
+    height: 400px; /* I must increase this height when I unhide timer and game buttons elements */
     border-radius: 8px;
     background-color: #00072D;
     position: relative;
     padding: 5px;
+    align-content: center; /* I must hide this when I unhide timer and game buttons elements */
 }
 
 #timer{

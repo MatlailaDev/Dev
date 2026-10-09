@@ -62,100 +62,102 @@ function addThreeAway(){
 }
 
 // Timer
-let timeRemaining = 2880
-let timeInterval = null
-let timeoutTime = 75
-let isTimeOutActive = false;
 
 
-startbtn.addEventListener("click", startGame)
-timeoutBtn.addEventListener("click", timeout)
-endBtn.addEventListener("click", endGame)
+// let timeRemaining = 2880
+// let timeInterval = null
+// let timeoutTime = 75
+// let isTimeOutActive = false;
 
 
-// helper to format any amount of seconds into MM:SS
-function formatTime(totalSeconds) {
-    const minutes = Math.floor(totalSeconds/60)
-    const seconds = totalSeconds % 60
-    const formattedMinutes = String(minutes).padStart(2, '0')
-    const formattedSeconds = String(seconds).padStart(2, '0')
+// startbtn.addEventListener("click", startGame)
+// timeoutBtn.addEventListener("click", timeout)
+// endBtn.addEventListener("click", endGame)
+
+
+// // helper to format any amount of seconds into MM:SS
+// function formatTime(totalSeconds) {
+//     const minutes = Math.floor(totalSeconds/60)
+//     const seconds = totalSeconds % 60
+//     const formattedMinutes = String(minutes).padStart(2, '0')
+//     const formattedSeconds = String(seconds).padStart(2, '0')
     
-    return `${formattedMinutes}:${formattedSeconds}`
-}
+//     return `${formattedMinutes}:${formattedSeconds}`
+// }
 
 
-function updateDisplay() {
-    if(isTimeOutActive) {
-        // Display the timeout countdown 
-        timer.textContent = `TIMEOUT: ${formatTime(timeoutTime)}`
-    } else {
-        // Display regular game clock
-        timer.textContent = formatTime(timeRemaining)
-    }
-}
+// function updateDisplay() {
+//     if(isTimeOutActive) {
+//         // Display the timeout countdown 
+//         timer.textContent = `TIMEOUT: ${formatTime(timeoutTime)}`
+//     } else {
+//         // Display regular game clock
+//         timer.textContent = formatTime(timeRemaining)
+//     }
+// }
 
-function startGame() {
-    if(timeInterval !== null) return
+// function startGame() {
+//     if(timeInterval !== null) return
 
-    timeInterval = setInterval(() => {
-        if(isTimeOutActive) {
-            // TIMEOUT ACTIVE
-            if(tiomeoutTime > 0) {
-                timeoutTime--
-                updateDisplay()
-            } else {
-                // Timeout ends and the game resumes on the nect time tick
-                isTimeOutActive = false
-                // Reset timeout for the next timeout
-                timeoutTime = 75
-                updateDisplay()
-                timer.textContent = `TIMEOUT OVER`
-            }
-        } else {
-            //Normal game mode timer
-            if(timeRemaining > 0) {
-                timeRemaining--
-                updateDisplay()
-            } else {
-                clearInterval(timeInterval)
-                timeInterval = null
-                timer.textContent = `FULL TIME`
-            }
-        }
-    }, 1000)
-}
+//     timeInterval = setInterval(() => {
+//         if(isTimeOutActive) {
+//             // TIMEOUT ACTIVE
+//             if(timeoutTime > 0) {
+//                 timeoutTime--
+//                 updateDisplay()
+//             } else {
+//                 // Timeout ends and the game resumes on the nect time tick
+//                 isTimeOutActive = false
+//                 // Reset timeout for the next timeout
+//                 timeoutTime = 75
+//                 updateDisplay()
+//                 timer.textContent = `TIMEOUT OVER`
+//             }
+//         } else {
+//             //Normal game mode timer
+//             if(timeRemaining > 0) {
+//                 timeRemaining--
+//                 updateDisplay()
+//             } else {
+//                 clearInterval(timeInterval)
+//                 timeInterval = null
+//                 timer.textContent = `FULL TIME`
+//             }
+//         }
+//     }, 1000)
+// }
 
-function timeout() {
-    // Only allow timeout if the timer is running
-    if (timeInterval === null) {
-        alert("Press Start")
-        return
-    }
-    // Prevent overriding an already running timeout
-    if(isTimeOutActive) return
+// function timeout() {
+//     // Only allow timeout if the timer is running
+//     if (timeInterval === null) {
+//         alert("Press Start")
+//         return
+//     }
+//     // Prevent overriding an already running timeout
+//     if(isTimeOutActive) return
 
-    isTimeOutActive = true
-    updateDisplay()
-}
+//     isTimeOutActive = true
+//     updateDisplay()
+// }
 
-// End button logic
-function stopTimer() {
-    clearInterval(timeInterval)
-    timeInterval = null
-}
+// // End button logic
+// function stopTimer() {
+//     clearInterval(timeInterval)
+//     timeInterval = null
+// }
 
-function endGame() {
-    scoreHome = 0
-    scoreAway = 0
+// function endGame() {
+//     scoreHome = 0
+//     scoreAway = 0
 
-    homeTeamDisplay.textContent = scoreHome
-    awayTeamDisplay.textContent = scoreAway
+//     homeTeamDisplay.textContent = scoreHome
+//     awayTeamDisplay.textContent = scoreAway
 
-    // Reset timer & timeout states completely
-    timeRemaining = 2880
-    timeoutTime -75
-    isTimeOutActive = false
+//     // Reset timer & timeout states completely
+//     timeRemaining = 2880
+//     timeoutTime = 75
+//     isTimeOutActive = false
 
-    stopTimer()
-    updateDisplay()
-}
+//     stopTimer()
+//     updateDisplay()
+// }
