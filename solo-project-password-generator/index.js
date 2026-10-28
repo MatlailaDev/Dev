@@ -5,14 +5,22 @@ const characters =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","
 "/"];
 
 function generatePasswords() {
-    randomIndexOne = Math.floor(Math.random() * characters.length)
-    randomIndexTwo = Math.floor(Math.random() * characters.length)
+    const randomPasswordOne = Array.from({length: 10}, () => {
+        const randomIndexOne = Math.floor(Math.random() * characters.length)
+        return characters[randomIndexOne]
+    })
 
-    randomPasswordOne = characters[randomIndexOne]
-    randomPasswordTwo = characters[randomIndexTwo]
+    const randomPasswordTwo = Array.from({length: 10}, () => {
+        const randomIndexTwo = Math.floor(Math.random() * characters.length) 
+        return characters[randomIndexTwo]
+    })
+
+    // randomPasswordOne = characters[randomIndexOne]
+    // randomPasswordTwo = characters[randomIndexTwo]
+
 
     console.log(randomPasswordOne)
 
-    passwordOneEl.textContent = randomPasswordOne
-    passwordTwoEl.textContent = randomPasswordTwo
+    passwordOneEl.textContent = randomPasswordOne.join("")
+    passwordTwoEl.textContent = randomPasswordTwo.join("")
 }
