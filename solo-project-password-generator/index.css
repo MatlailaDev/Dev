@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+h2 span {
+    display: block;
+}
+
+p {
+    margin-top: 10px;
+}
+
+button {
+    width: fit-content;
+    padding: 7px;
+    margin-top: 50px;
+}
+
+.password-displays {
+    display: flex;
+    border-top: 2px solid black;
+    padding: 20px 0;
+}
+
+.password-displays div {
+    border: 1px dotted black;
+    width: 180px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    font-size: 16px;
+}
+
+.password-displays div:nth-of-type(2) {
+    margin-left: 20px;
+}
+
+
