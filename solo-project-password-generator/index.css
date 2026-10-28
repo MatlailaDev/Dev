@@ -10,42 +10,58 @@ body {
     max-width: 500px;
     margin: auto;
     padding: 10px;
+    background-color: #1F2937;
+    font-family: "Karla", sans-serif;
 }
 
 h2 {
     font-size: 40px;
     font-weight: 700;
     margin-top: 20px;
+    color: #FFFFFF;
 }
 
 h2 span {
     display: block;
+    color: #4ADF86;
 }
 
 p {
     margin-top: 10px;
+    color: #FFFFFF;
 }
 
 button {
     width: fit-content;
-    padding: 7px;
+    padding: 15px;
     margin-top: 50px;
+    background-color: #10B981;
+    color: #FFFFFF;
+    border: none;
+    font-size: 17px;
+    border-radius: 5px;
+    /* margin-bottom: 40px; */
+
 }
+
 
 .password-displays {
     display: flex;
-    border-top: 2px solid black;
-    padding: 20px 0;
+    border-top: 1px solid black;
+    padding: 30px 0;
+    margin: 30px 0;
 }
 
 .password-displays div {
-    border: 1px dotted black;
+    border: none;
     width: 180px;
     height: 40px;
     border-radius: 5px;
     text-align: center;
     align-content: center;
     font-size: 16px;
+    color: #55F991;
+    background: #2a2e33;
 }
 
 .password-displays div:nth-of-type(2) {

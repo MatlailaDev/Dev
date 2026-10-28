@@ -20,6 +20,7 @@ function generatePasswords() {
 
 
     console.log(randomPasswordOne)
+    console.log(randomPasswordTwo)
 
     passwordOneEl.textContent = randomPasswordOne.join("")
     passwordTwoEl.textContent = randomPasswordTwo.join("")
