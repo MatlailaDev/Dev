@@ -66,3 +66,8 @@ section .result {
     border-radius: 6px;
     background-color: #FEFEFE;
 }
+
+.result > div {
+    font-size: 13px;
+    margin: 10px auto;
+}
