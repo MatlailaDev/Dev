@@ -7,7 +7,7 @@
 body {
     font-family: "Space Grotesk", sans-serif;
     text-align: center;
-    border: 1px solid rgb(235, 235, 235);
+    border: 1px solid #F4F4F4;
     width: 500px;
     margin: auto auto;
     border-radius: 6px;
@@ -16,7 +16,7 @@ body {
 
 section {
     border-radius: 6px;
-    background-color: rgb(235, 235, 235);
+    background-color: #F4F4F4;
     padding-bottom: 20px;
 }
 
@@ -29,6 +29,7 @@ section .interface {
 }
 
 section .interface h2{
+    margin-top: 10px;
     margin-bottom: 20px;
     color: #FFFFFF;
 }
@@ -65,6 +66,10 @@ section .result {
     padding: 8px;
     border-radius: 6px;
     background-color: #FEFEFE;
+}
+
+section .result h4 {
+    color: #5A537B;
 }
 
 .result > div {
