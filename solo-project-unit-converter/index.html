@@ -13,13 +13,31 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h2>Generate a <span>random password</span></h2>
-    <p>Never use an insecure password again</p>
-    <button onclick="generatePasswords()">Generate passwords</button>
-    <span class="password-displays">    
-        <div id="passwordOne"></div>
-        <div id="passwordTwo"></div>
-    </span>
+    <section>
+        <div class="interface">
+            <h2>Metric/Imperial Unit Conversion</h2>
+
+            <input type="text">
+            <div class="btn-container">
+                <button>Convert</button>
+            </div>
+        </div>
+
+        <div>
+            <div class="result">
+                <h4>Length(Meter/Feet)</h4>
+                <div id="length"></div>
+            </div>
+            <div class="result">
+                <h4>Volume(Liters/Gallons)</h4>
+                <div id="volume"></div>
+            </div>
+            <div class="result">
+                <h4>Mass(Kilograms/Pounds)</h4>
+                <div id="mass"></div>
+            </div>
+        </div>
+    </section>
 
     <script src="index.js"></script>
 </body>
